@@ -1,13 +1,14 @@
 import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import CustomerOrderCheckout from './views/CustomerOrderCheckout';
+import CreateOrder from './views/CreateOrder';
 
 function BufWare (){
     return(
         <Routes>
-            <Route path="/" element={ <CustomerOrderCheckout/>}> //defaultní stránka
                 <Route path="customer-order-checkout" element={ <CustomerOrderCheckout/>}/>
-            </Route>
+                <Route path="create-order" element={ <CreateOrder/>}/>
+                <Route path="" element={<CustomerOrderCheckout/>} /> //defaultní stránka
         </Routes>
     )
 };
