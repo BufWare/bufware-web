@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ChosenOrders({type, orders}){
+export default function ChosenOrders({type, orders}){
     return (
         <div>
             {
@@ -9,5 +9,3 @@ function ChosenOrders({type, orders}){
         </div>
     )
 }
-
-export default ChosenOrders;
