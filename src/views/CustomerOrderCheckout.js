@@ -16,7 +16,7 @@ function CustomerOrderCheckout() {
 
     const getOrders = async () => {
         try{
-            const response = await fetch("https://62849a953060bbd3473b9bce.mockapi.io/overview");
+            const response = await fetch("https://62849a953060bbd3473b9bce.mockapi.io/orders");
             const orders = await response.json();
             setOrders(orders);
         } catch (err) {
