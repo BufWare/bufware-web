@@ -2,6 +2,7 @@ import React from 'react';
 import {Routes, Route} from 'react-router-dom';
 import CustomerOrderCheckout from './views/CustomerOrderCheckout';
 import CreateOrder from './views/CreateOrder';
+import AddProduct from './views/AddProduct';
 import './css/BufWare.css';
 
 function BufWare (){
@@ -9,7 +10,7 @@ function BufWare (){
         <Routes>
                 <Route path="customer-order-checkout" element={ <CustomerOrderCheckout/>}/>
                 <Route path="create-order" element={ <CreateOrder/>}/>
-                <Route path="" element={<CustomerOrderCheckout/>} /> //defaultní stránka
+                <Route path="" element={<AddProduct/>} /> {/*defaultní stránka*/}
         </Routes>
     )
 };
