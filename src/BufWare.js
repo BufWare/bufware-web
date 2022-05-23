@@ -4,7 +4,7 @@ import CustomerOrderCheckout from './views/CustomerOrderCheckout';
 import CreateOrder from './views/CreateOrder';
 import AddProduct from './views/AddProduct';
 import Rozcestnik from './views/Rozcestnik';
-import './BufWare.css';
+import './css/BufWare.css';
 
 function BufWare (){
     return(

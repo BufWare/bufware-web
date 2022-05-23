@@ -3,9 +3,7 @@ import {useEffect, useState} from 'react';
 import ChosenOrders from  '../components/ChosenOrders';
 import '../css/CustomerOrderCheckout.css';
 
-
-
-function CustomerOrderCheckout() {
+export default function CustomerOrderCheckout() {
     const [orders, setOrders] = useState([]);
 
     useEffect(() => {
@@ -39,6 +37,4 @@ function CustomerOrderCheckout() {
         </div>
     );
 }
-
-export default CustomerOrderCheckout;
 
