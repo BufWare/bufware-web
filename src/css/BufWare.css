@@ -1,0 +1,28 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: white;
+}
+
+
+h1,h2,h3,h4,h5{
+    block: inline-block;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    background-color: #CC0000;
+    font-family: Poppins;
+}
+
+p, div{
+    font-family: Poppins;
+    color: white;
+}
+
+hr{
+    border: 0.3vw solid white;
+}

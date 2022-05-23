@@ -3,6 +3,7 @@ import {Routes, Route} from 'react-router-dom';
 import CustomerOrderCheckout from './views/CustomerOrderCheckout';
 import CreateOrder from './views/CreateOrder';
 import AddProduct from './views/AddProduct';
+import './css/BufWare.css';
 
 function BufWare (){
     return(
