@@ -1,13 +1,3 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-body{
-    background-color: steelblue;
-}
-
 .orderList{
     height: auto;
     width: 80vw;
@@ -44,13 +34,5 @@ body{
 }
 
 h1,h2{
-    block: inline-block;
-    background-color: cornflowerblue;
     -moz-border-radius: 3vw 3vw 0 0;
-    font-size: 4vw;
-    padding: 1vw 0;
-}
-
-hr{
-    border: 0.3vw solid white;
 }

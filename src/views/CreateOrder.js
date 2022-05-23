@@ -2,6 +2,7 @@ import React from 'react';
 import {useEffect, useState} from 'react';
 import Product from  '../components/Product';
 import Cart from  '../components/Cart';
+import '../css/CreateOrder.css';
 
 export default function CreateOrder(){
     const [products, setProducts] = useState([]);
@@ -75,11 +76,13 @@ export default function CreateOrder(){
     };
 
     return(
-        <>
+        <div className='container'>
             <h1>Produkty</h1>
-            <Product products={products} addToCart={addToCart}/>
-            <h2>Košík</h2>
+            <div className='productContainer'>
+                <Product className='product' products={products} addToCart={addToCart}/>
+            </div>
+            <h1>Košík</h1>
             <Cart cart={cart} totalPrice={totalPrice} products={products} addToCart={addToCart} removeFromCart={removeFromCart} removeAllFromCart={removeAllFromCart} submitOrder={submitOrder}/>
-        </>
+        </div>
     )
 }

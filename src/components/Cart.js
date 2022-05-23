@@ -3,7 +3,7 @@ import CartProduct from "./CartProduct";
 
 export default function Cart({cart, products, addToCart, removeFromCart, removeAllFromCart, submitOrder, totalPrice}){
     return (
-        <div>
+        <div className='cartProductContainer'>
             {
                 cart.map(cart => {
                         return (
