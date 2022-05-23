@@ -26,13 +26,9 @@
     line-height: 8vw;
     background-color: white;
     border-radius: 2vw;
-    color: steelblue;
+    color: black;
     margin: 1vw 0.5vw;
     font-size: 4vw;
     flex-grow: 3;
     display: inline-block;
-}
-
-h1,h2{
-    -moz-border-radius: 3vw 3vw 0 0;
 }

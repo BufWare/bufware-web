@@ -1,8 +1,7 @@
 import React from 'react'
-import { useForm } from 'react-hook-form';
 import {useEffect, useState} from 'react';
 import AddProductForm from '../components/AddProductForm';
-import './AddProduct.css';
+import '../css/AddProduct.css';
 
 export default function AddProduct() {
     const [data, setData] = useState(null);
