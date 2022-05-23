@@ -4,6 +4,7 @@ import ChosenOrders from  '../components/ChosenOrders';
 import './CustomerOrderCheckout.css';
 
 
+
 function CustomerOrderCheckout() {
     const [orders, setOrders] = useState([]);
 
