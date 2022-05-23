@@ -1,6 +1,6 @@
 import React from 'react';
-import {Routes, Route, Link} from 'react-router-dom'; //BrowserRouter as Router, 
-import './Rozcestnik.css';
+import {Link} from 'react-router-dom'; //BrowserRouter as Router, 
+import '../css/Rozcestnik.css';
 
 export default function Rozcestnik() {
   return (

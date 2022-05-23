@@ -1,5 +1,5 @@
 import React from 'react';
-import {Routes, Route, Link} from 'react-router-dom'; //BrowserRouter as Router, 
+import {Routes, Route} from 'react-router-dom'; //BrowserRouter as Router, 
 import CustomerOrderCheckout from './views/CustomerOrderCheckout';
 import CreateOrder from './views/CreateOrder';
 import AddProduct from './views/AddProduct';

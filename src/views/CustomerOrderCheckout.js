@@ -1,7 +1,7 @@
 import React from 'react';
 import {useEffect, useState} from 'react';
 import ChosenOrders from  '../components/ChosenOrders';
-import './CustomerOrderCheckout.css';
+import '../css/CustomerOrderCheckout.css';
 
 
 
