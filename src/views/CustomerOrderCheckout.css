@@ -36,7 +36,7 @@ body{
     line-height: 8vw;
     background-color: white;
     border-radius: 2vw;
-    color: steelblue;
+    color: black;
     margin: 1vw 0.5vw;
     font-size: 4vw;
     flex-grow: 3;
@@ -45,7 +45,7 @@ body{
 
 h1,h2{
     block: inline-block;
-    background-color: cornflowerblue;
+    background-color: #CC0000;
     -moz-border-radius: 3vw 3vw 0 0;
     font-size: 4vw;
     padding: 1vw 0;
