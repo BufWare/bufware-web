@@ -2,10 +2,11 @@ import React from 'react';
 
 export default function CartProduct({cart, products, addToCart, removeFromCart, removeAllFromCart}){
     const product=products.find(product => product.id === cart.id);
+    const celkovaCena=product.cena*cart.mnozstvi;
     return(
         <>
             <div key={cart.id} className="product">
-                {cart.id}. - {product.nazev} - {cart.mnozstvi} ks - {product.cena} Kč/ks - {product.cena*cart.mnozstvi} Kč celkem
+                {cart.id}. - {product.nazev} - {cart.mnozstvi} ks - {product.cena} Kč/ks - {celkovaCena} Kč celkem
             </div>
             <button onClick={() => addToCart(cart.id)}>+</button>
             <button onClick={() => removeFromCart(cart.id)}>-</button>

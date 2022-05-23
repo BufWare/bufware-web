@@ -1,7 +1,7 @@
 import React from 'react';
 import CartProduct from "./CartProduct";
 
-export default function Cart({cart, products, addToCart, removeFromCart, removeAllFromCart}){
+export default function Cart({cart, products, addToCart, removeFromCart, removeAllFromCart, submitOrder, totalPrice}){
     return (
         <div>
             {
@@ -14,6 +14,8 @@ export default function Cart({cart, products, addToCart, removeFromCart, removeA
                     }
                 )
             }
+            <div>Celkem {totalPrice} Kč</div>
+            <button onClick={submitOrder}>Odeslat objednávku</button>
         </div>
     )
 }
