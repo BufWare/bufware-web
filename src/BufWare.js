@@ -4,6 +4,7 @@ import CustomerOrderCheckout from './views/CustomerOrderCheckout';
 import CreateOrder from './views/CreateOrder';
 import ConfirmCreateOrder from './views/ConfirmCreateOrder';
 import CancelCreateOrder from './views/CancelCreateOrder';
+import AddProduct from './views/AddProduct';
 import './css/BufWare.css';
 
 function BufWare (){
@@ -13,7 +14,7 @@ function BufWare (){
                 <Route path="create-order" element={ <CreateOrder/>}/>
                 <Route path="confirm-create-order" element={ <ConfirmCreateOrder/>}/>
                 <Route path="cancel-create-order" element={ <CancelCreateOrder/>}/>
-                <Route path="" element={<CustomerOrderCheckout/>} /> //defaultní stránka
+                <Route path="" element={<AddProduct/>} /> {/*defaultní stránka*/}
         </Routes>
     )
 };

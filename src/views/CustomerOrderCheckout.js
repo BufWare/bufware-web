@@ -3,7 +3,6 @@ import {useEffect, useState} from 'react';
 import ChosenOrders from  '../components/ChosenOrders';
 import '../css/CustomerOrderCheckout.css';
 
-
 export default function CustomerOrderCheckout() {
     const [orders, setOrders] = useState([]);
 
