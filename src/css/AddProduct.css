@@ -1,4 +1,4 @@
-.addProductContainer > h1{
+.addProductContainer h1{
     font-size: 24px;
     margin: 5px;
     padding: 5px;
@@ -9,7 +9,7 @@
     color: white;
 }
 
-input{
+.addProductContainer input{
     width: 300px;
     padding: 12px 20px;
     margin: 8px 4px;
@@ -20,7 +20,7 @@ input{
     color: black;
 }
 
-button {
+.addProductContainer button {
     width: 300px;
     padding: 12px 20px;
     margin: 8px 4px;
@@ -32,7 +32,7 @@ button {
     outline: none;
 }
 
-button:focus {
+.addProductContainer button:focus {
     width: 300px;
     padding: 12px 20px;
     margin: 8px 4px;
@@ -44,7 +44,7 @@ button:focus {
     outline: none;
 }
 
-input:focus {
+.addProductContainer input:focus {
     width: 300px;
     padding: 12px 20px;
     margin: 8px 4px;
@@ -55,28 +55,28 @@ input:focus {
     color: black;
 }
 
-::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+.addProductContainer ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
     color: black;
     opacity: 1; /* Firefox */
 }
-  
-  :-ms-input-placeholder { /* Internet Explorer 10-11 */
-    color: black;
-}
-  
-  ::-ms-input-placeholder { /* Microsoft Edge */
+
+.addProductContainer  :-ms-input-placeholder { /* Internet Explorer 10-11 */
     color: black;
 }
 
-table, th, td, th{
+.addProductContainer  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: black;
+}
+
+.addProductContainer table, th, td, th{
     border: 1px solid black;
     border-collapse: collapse;
     padding: 3px;
 }
 
-table td input{
+.addProductContainer table td input{
     width: auto;
 }
-table td input:focus{
+.addProductContainer table td input:focus{
     width: auto;
 }

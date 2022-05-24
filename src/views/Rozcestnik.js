@@ -4,7 +4,7 @@ import '../css/Rozcestnik.css';
 
 export default function Rozcestnik() {
   return (
-    <div>
+    <div className='rozscestnikContainer'>
         <ul id="nav">
             <li>
                 <Link to="create-order">TVORBA OBJEDNÁVKY</Link>

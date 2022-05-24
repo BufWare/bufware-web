@@ -58,7 +58,6 @@ export default function AddProduct() {
            </table>
            <h1>Přidání produktu</h1>
             <AddProductForm />
-          
         </div>
       );
     /*return (        

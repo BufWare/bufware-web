@@ -12,7 +12,7 @@ export default function ConfirmCreateOrder(){
     }
 
     return(
-        <div>
+        <div className='cancelConfirmOrderContainer'>
             <h1>Vaše objednávka s číslem {id} byla úspěšně vytvořena.</h1>
             <h2>Její stav můžete sledovat na informační tabuli.</h2>
             <h3>Pro tvorbu nové objednávky klikněte</h3>

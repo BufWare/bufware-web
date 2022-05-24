@@ -88,7 +88,7 @@ export default function CreateOrder(){
     };
 
     return(
-        <div className='container'>
+        <div className='createOrdercontainer'>
             <h1>Produkty</h1>
             <div className='productContainer'>
                 <Product className='product' products={products} addToCart={addToCart}/>
