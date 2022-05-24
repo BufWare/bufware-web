@@ -23,7 +23,7 @@ export default function CustomerOrderCheckout() {
     };
 
     return(
-        <div className="orderList">
+        <div className="container">
             <h1>Seznam objednávek</h1>
             <hr/>
             <h2>Objednané</h2>

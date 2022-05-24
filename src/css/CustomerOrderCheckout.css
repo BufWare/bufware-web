@@ -1,9 +1,9 @@
-.orderList{
+.container{
     height: auto;
     width: 80vw;
     margin: 10vw;
     overflow:hidden;
-    border: 1vw solid white;
+    border: 1vw solid black;
     border-radius: 3vw ;
     color: white;
     font-weight: bold;
@@ -24,9 +24,8 @@
     height: 8vw;
     width: 8vw;
     line-height: 8vw;
-    background-color: white;
+    background-color: #CC0000;
     border-radius: 2vw;
-    color: black;
     margin: 1vw 0.5vw;
     font-size: 4vw;
     flex-grow: 3;

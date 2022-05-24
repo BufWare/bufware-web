@@ -1,0 +1,14 @@
+.newOrder{
+    height: 200px;
+    width: 200px;
+    background-color: #cc0000;
+    text-align: center;
+    line-height: 200px;
+    margin: 10px auto;
+    border-radius: 20px;
+}
+
+.newOrder:hover{
+    border: 2px solid black;
+    line-height: 196px;
+}
