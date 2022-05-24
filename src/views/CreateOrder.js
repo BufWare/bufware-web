@@ -31,7 +31,7 @@ export default function CreateOrder(){
 
     const submitOrder = async () => {
         const newProducts=await getProducts('check');
-        if(JSON.stringify(newProducts)==JSON.stringify(products)) {
+        if(JSON.stringify(newProducts)===JSON.stringify(products)) {
             try{
                 const response = await fetch("https://ptsv2.com/t/3wj3z-1653375345/post", {method: 'POST', body: JSON.stringify(cart)});
                 const order = await response.json();

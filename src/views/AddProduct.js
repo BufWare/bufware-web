@@ -33,7 +33,7 @@ export default function AddProduct() {
       }, [])
       
       return (
-        <div>
+        <div className='addProductContainer'>
         <h1>Seznam produktů</h1>
           {loading && <div>Načítání...</div>}
           {error && (

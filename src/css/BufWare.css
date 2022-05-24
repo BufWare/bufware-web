@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
 }
 
 body{
@@ -20,7 +21,6 @@ h1,h2,h3,h4,h5{
 
 p, div{
     font-family: Poppins;
-    color: white;
 }
 
 hr{
