@@ -28,12 +28,13 @@ export default function CustomerOrderCheckout() {
         }
     };
 
+
     return(
         <div className="customerOrderCheckoutContainer container">
             <h1>Seznam objednávek</h1>
             {loading && <div>Načítání...</div>}
-            {error && (<div>Nastal problém při načítání dat - {error}</div>)}
-            {!loading &&
+            {!loading && error && (<div>Nastal problém při načítání dat - {error}</div>)}
+            {!loading && !error &&
             <>
                 <h2>Objednané</h2>
                 <div className="chosenOrderList">

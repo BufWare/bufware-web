@@ -22,3 +22,8 @@
 .manageOrderContainer .button{
     cursor: pointer;
 }
+
+.manageOrderContainer .button:hover{
+    background-color: #aa0000;
+}
+

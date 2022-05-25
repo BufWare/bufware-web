@@ -6,9 +6,11 @@
     line-height: 200px;
     margin: 10px auto;
     border-radius: 20px;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
 }
 
 .cancelConfirmOrderContainer .newOrder:hover{
-    border: 2px solid black;
-    line-height: 196px;
+    background-color: #aa0000;
 }

@@ -10,6 +10,7 @@ export default function Product({products, addToCart}){
                                 <div key={product.id} onClick={() => addToCart(product.id)} className="product">
                                     <div className="productId">#{product.id}</div>
                                     <div className="productName">{product.nazev}</div>
+                                    <div className="productDescription">{product.popis}</div>
                                     <div className="productPrice">{product.cena} Kč</div>
                                 </div>
                             </>
