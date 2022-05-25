@@ -10,6 +10,8 @@ export default function CreateOrder(){
     const [cart, setCart] = useState([]);
     const [totalPrice, setTotalPrice] = useState();
     const navigate = useNavigate();
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getProducts('load');
@@ -26,6 +28,10 @@ export default function CreateOrder(){
                 return (products);
         } catch (err) {
             console.error(err.message);
+            setError(err.message);
+        }
+        finally {
+            setLoading(false);
         }
     };
 
@@ -88,12 +94,19 @@ export default function CreateOrder(){
     };
 
     return(
-        <div className='createOrdercontainer'>
-            <h1>Produkty</h1>
-            <div className='productContainer'>
-                <Product className='product' products={products} addToCart={addToCart}/>
+            <div className="createOrderContainer container">
+                <h1>Produkty</h1>
+                {loading && <div>Načítání...</div>}
+                {error && (<div>Nastal problém při načítání dat - {error}</div>)}
+                {!loading &&
+                    <>
+                        <div className="productContainer">
+                            <Product className="product" products={products} addToCart={addToCart}/>
+                        </div>
+                        <Cart cart={cart} totalPrice={totalPrice} products={products} addToCart={addToCart}
+                        removeFromCart={removeFromCart} removeAllFromCart={removeAllFromCart} submitOrder={submitOrder}/>
+                    </>
+                }
             </div>
-            <Cart cart={cart} totalPrice={totalPrice} products={products} addToCart={addToCart} removeFromCart={removeFromCart} removeAllFromCart={removeAllFromCart} submitOrder={submitOrder}/>
-        </div>
     )
 }

@@ -27,3 +27,15 @@ p, div{
 hr{
     border: 0.2vw solid black;
 }
+
+.container{
+    height: auto;
+    width: 1000px;
+    margin: 10px auto;
+    border: 5px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    user-select: none;
+}

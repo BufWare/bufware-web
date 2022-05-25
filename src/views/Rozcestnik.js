@@ -7,14 +7,18 @@ export default function Rozcestnik() {
     <div className='rozscestnikContainer'>
         <ul id="nav">
             <li>
-                <Link to="create-order">TVORBA OBJEDNÁVKY</Link>
+                <Link to="create-order">Tvorba objednávky</Link>
             </li>
             <li>
-                <Link to="customer-order-checkout">TABULE OBJEDNÁVEK</Link>
+                <Link to="add-product">Tvorba a editace produktů</Link>
             </li>
             <li>
-                <Link to="add-product">TVORBA / EDITACE PRODUKTŮ</Link>
+                <Link to="manage-orders">Správa objednávek</Link>
             </li>
+            <li>
+                <Link to="customer-order-checkout">Seznam objednávek</Link>
+            </li>
+
         </ul>
     </div>
   )
