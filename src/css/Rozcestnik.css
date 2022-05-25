@@ -1,13 +1,16 @@
 .rozscestnikContainer li {
+    block: inline-block;
     text-align: center;
-    list-style-type: none;
-    font-size: 3vw;
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 2vw 20vw;
-    padding: 2vw;
-    border-radius: 10px;
-    background-color: #CC0000;
+    text-transform: uppercase;
     color: white;
+    background-color: #CC0000;
+    font-family: Poppins;
+    list-style-type: none;
+    font-size: 42px;
+    background-color: #CC0000;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
 }
 
 .rozscestnikContainer a {

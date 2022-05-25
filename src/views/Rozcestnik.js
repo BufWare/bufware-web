@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom'; //BrowserRouter as Router, 
+import {Link} from 'react-router-dom';
 import '../css/Rozcestnik.css';
 
 export default function Rozcestnik() {
   return (
-    <div className='rozscestnikContainer'>
+    <div className='rozscestnikContainer container'>
         <ul id="nav">
             <li>
                 <Link to="create-order">Tvorba objednávky</Link>
@@ -18,7 +18,6 @@ export default function Rozcestnik() {
             <li>
                 <Link to="customer-order-checkout">Seznam objednávek</Link>
             </li>
-
         </ul>
     </div>
   )

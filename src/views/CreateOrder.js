@@ -39,10 +39,14 @@ export default function CreateOrder(){
         const newProducts=await getProducts('check');
         if(JSON.stringify(newProducts)===JSON.stringify(products)) {
             try{
-                const response = await fetch("https://ptsv2.com/t/3wj3z-1653375345/post", {method: 'POST', body: JSON.stringify(cart)});
+                const response = await fetch("https://ptsv2.com/t/3wj3z-1653375345/post", {
+                    method: 'POST',
+                    headers: { "Content-Type": "application/json"},
+                    body: JSON.stringify(cart)
+                });
                 const order = await response.json();
                 setCart([]);
-                navigate('/confirm-create-order', {state: {id: order}});
+                navigate('/confirm-create-order', {state: {id: order.id}});
             } catch (err) {
                 console.error(err.message);
                 navigate('/cancel-create-order');
@@ -59,12 +63,12 @@ export default function CreateOrder(){
         if(cart.find(product => product.id === id)){
             const newCart = [...cart];
             const cartProduct = newCart.find(cartProduct => cartProduct.id === id)
-            cartProduct.mnozstvi += 1
+            cartProduct.pocet += 1
             setCart(newCart)
         }
         else{
             setCart(prevCart => {
-                return [...prevCart, { id: id, mnozstvi: 1}]
+                return [...prevCart, { id: id, pocet: 1}]
             })
         }
     };
@@ -72,13 +76,13 @@ export default function CreateOrder(){
     const removeFromCart = (id) => {
         const cartProduct = cart.find(cartProduct => cartProduct.id === id)
         if(cartProduct){
-            if(cartProduct.mnozstvi === 1){
+            if(cartProduct.pocet === 1){
                 removeAllFromCart(id);
             }
             else{
                 const newCart = [...cart];
                 const product = products.find(product => product.id === id)
-                cartProduct.mnozstvi -= 1;
+                cartProduct.pocet -= 1;
                 setTotalPrice(prevTotalPrice => {return prevTotalPrice-product.cena})
                 setCart(newCart);
             }
@@ -89,7 +93,7 @@ export default function CreateOrder(){
         const product = products.find(product => product.id === id)
         const cartProduct = cart.find(cartProduct => cartProduct.id === id)
         const newCart = cart.filter(cartProduct => cartProduct.id !== id);
-        setTotalPrice(prevTotalPrice => {return prevTotalPrice-product.cena*cartProduct.mnozstvi})
+        setTotalPrice(prevTotalPrice => {return prevTotalPrice-product.cena*cartProduct.pocet})
         setCart(newCart);
     };
 
@@ -98,7 +102,7 @@ export default function CreateOrder(){
                 <h1>Produkty</h1>
                 {loading && <div>Načítání...</div>}
                 {error && (<div>Nastal problém při načítání dat - {error}</div>)}
-                {!loading &&
+                {!loading && !error &&
                     <>
                         <div className="productContainer">
                             <Product className="product" products={products} addToCart={addToCart}/>

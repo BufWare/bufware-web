@@ -30,12 +30,18 @@ export default function ManageOrders(){
         const order = newOrders.find(order => order.id === id);
         order.stav = state;
         setOrders(newOrders);
-        /*try{
-            await fetch("https://ptsv2.com/t/gnry0-1653476753/post", {method: 'POST', body: JSON.stringify({"id": id, "stav": state})});
+        /*
+        try{
+            await fetch("https://ptsv2.com/t/gnry0-1653476753/post", {
+                method: 'POST',
+                headers: { "Content-Type": "application/json"},
+                body: JSON.stringify({"id": id, "stav": state})
+            });
             getOrders();
         } catch (err) {
             console.error(err.message);
-        }*/
+        }
+        */
     };
 
     return(
@@ -43,11 +49,11 @@ export default function ManageOrders(){
             <h1>Správa objednávek</h1>
             {loading && <div>Načítání...</div>}
             {error && (<div>Nastal problém při načítání dat - {error}</div>)}
-            {!loading &&
+            {!loading && !error &&
             <>
-            <h2>Připravující</h2>
+            <h2>Objednané</h2>
             <Order orders={orders} changeState={changeState} type={[0]}/>
-            <h2>Hotové</h2>
+            <h2>Připravené</h2>
             <Order orders={orders} changeState={changeState} type={[1]}/>
             <h2>Ukončené</h2>
             <Order orders={orders} changeState={changeState} type={[2,3]}/>
