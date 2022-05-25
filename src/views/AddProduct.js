@@ -12,7 +12,7 @@ export default function AddProduct() {
         const getData = async () => {
           try {
             const response = await fetch(
-              `https://62849a953060bbd3473b9bce.mockapi.io/products`
+              `${process.env.REACT_APP_API_URL}/products`
             );
             if (!response.ok) {
               throw new Error(

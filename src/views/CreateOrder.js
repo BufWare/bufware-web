@@ -20,7 +20,7 @@ export default function CreateOrder(){
 
     const getProducts = async (type) => {
         try{
-            const response = await fetch("https://62849a953060bbd3473b9bce.mockapi.io/products");
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/menu`);
             const products = await response.json();
             if(type==='load')
                 setProducts(products);
@@ -39,7 +39,11 @@ export default function CreateOrder(){
         const newProducts=await getProducts('check');
         if(JSON.stringify(newProducts)===JSON.stringify(products)) {
             try{
-                const response = await fetch("https://ptsv2.com/t/3wj3z-1653375345/post", {method: 'POST', body: JSON.stringify(cart)});
+                const response = await fetch(`${process.env.REACT_APP_API_URL}/order`, {
+                        method: 'POST',
+                        body: JSON.stringify({cart})
+                    }
+                );
                 const order = await response.json();
                 setCart([]);
                 navigate('/confirm-create-order', {state: {id: order}});
