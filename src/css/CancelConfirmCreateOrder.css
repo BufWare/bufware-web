@@ -1,4 +1,4 @@
-.newOrder{
+.cancelConfirmOrderContainer .newOrder{
     height: 200px;
     width: 200px;
     background-color: #cc0000;
@@ -8,7 +8,7 @@
     border-radius: 20px;
 }
 
-.newOrder:hover{
+.cancelConfirmOrderContainer .newOrder:hover{
     border: 2px solid black;
     line-height: 196px;
 }

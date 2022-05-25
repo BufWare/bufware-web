@@ -1,15 +1,6 @@
-.container{
-    height: auto;
-    width: 1000px;
-    margin: 10px auto;
-    border: 5px solid black;
-    border-radius: 40px;
-    overflow: hidden;
-}
-
 /*PRODUCTS*/
 
-.productContainer{
+.createOrderContainer .productContainer{
     display: flex;
     flex-flow: row wrap;
     clear: both;
@@ -18,7 +9,7 @@
     padding: 0;
 }
 
-.product{
+.createOrderContainer .product{
     height: 100px;
     width: 150px;
     display: inline-block;
@@ -28,30 +19,37 @@
     margin: 5px 5px 0 5px;
     text-align: left;
     position: relative;
+    cursor: pointer;
+    color: white;
 }
 
-.product > div{
+.createOrderContainer .product:hover{
+    outline: 2px solid black;
+    color: black;
+}
+
+.createOrderContainer .product > div{
     position: absolute;
     left: 5px;
 }
 
-.productId{
+.createOrderContainer .productId{
     font-size: 10px;
     top: 2px;
 }
 
-.productName{
+.createOrderContainer .productName{
     top: 14px;
 }
 
-.productPrice{
+.createOrderContainer .productPrice{
     font-weight: bold;
     bottom: 0;
 }
 
 /*CART*/
 
-.cartProduct{
+.createOrderContainer .cartProduct{
     height: 50px;
     width: 98%;
     display: inline-block;
@@ -60,22 +58,23 @@
     position: relative;
     float: left;
     border-radius: 20px;
+    color: white;
 }
 
-.cartProduct > div > div{
+.createOrderContainer .cartProduct > div > div{
     text-align: left;
     position: absolute;
 }
 
-.cartProductId{
+.createOrderContainer .cartProductId{
     font-size: 10px;
-    height: 15px;
+    height: 10px;
     width: 38%;
-    top: 0px;
+    top: 5px;
     left: 2%;
 }
 
-.cartProductName{
+.createOrderContainer .cartProductName{
     height: 35px;
     width: 38%;
     left: 2%;
@@ -83,21 +82,21 @@
     line-height: 35px;
 }
 
-.cartProductAmount{
+.createOrderContainer .cartProductAmount{
     height: 25px;
     width: 15%;
     top: 0;
     left: 40%;
 }
 
-.cartProductPrice{
+.createOrderContainer .cartProductPrice{
     height: 25px;
     width: 15%;
     top: 25px;
     left: 40%;
 }
 
-.cartProductTotalPrice{
+.createOrderContainer .cartProductTotalPrice{
     height: 50px;
     width: 15%;
     top: 0;
@@ -105,7 +104,7 @@
     line-height: 50px;
 }
 
-.cartProductButton {
+.createOrderContainer .cartProductButton {
     height: 30px;
     top: 10px;
     line-height: 26px;
@@ -113,25 +112,30 @@
     position: absolute;
     border-radius: 10px;
     border: 2px solid white;
-    user-select: none;
+    cursor: pointer;
 }
 
-.cartProductButton.Add {
+.createOrderContainer .cartProductButton:hover {
+    border: 2px solid black;
+    color: black;
+}
+
+.createOrderContainer .cartProductButton.Add {
     width: 3%;
     left: 70%;
 }
 
-.cartProductButton.Remove {
+.createOrderContainer .cartProductButton.Remove {
     width: 3%;
     left: 74%;
 }
 
-.cartProductButton.RemoveAll {
+.createOrderContainer .cartProductButton.RemoveAll {
     width: 10%;
     left: 78%;
 }
 
-.submitOrder{
+.createOrderContainer .submitOrder{
     height: 30px;
     width: 30%;
     line-height: 30px;
@@ -140,14 +144,15 @@
     background-color: #cc0000;
     position: relative;
     float: left;
+    color: white;
 }
 
-.submitOrder:hover{
-    border: 2px solid black;
-    line-height: 26px;
+.createOrderContainer .submitOrder:hover{
+    outline: 2px solid black;
+    color: black;
 }
 
-.totalPrice{
+.createOrderContainer .totalPrice{
     height: 30px;
     width: 30%;
     line-height: 30px;
@@ -156,4 +161,5 @@
     position: relative;
     float: right;
     border-radius: 10px;
+    color: white;
 }

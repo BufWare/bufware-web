@@ -1,0 +1,24 @@
+.manageOrderContainer .noOrders {
+    margin: 1% 0;
+}
+
+.manageOrderContainer table{
+    width: 98%;
+    margin: 1% 1%;
+    border: 5px solid black;
+    border-collapse: collapse;
+}
+
+.manageOrderContainer td{
+    padding: 10px;
+    border: 2px solid black;
+}
+
+.manageOrderContainer tHead{
+    background-color: #cc0000;
+    color: white;
+}
+
+.manageOrderContainer .button{
+    cursor: pointer;
+}

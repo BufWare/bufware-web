@@ -1,4 +1,4 @@
-li {  
+.rozscestnikContainer li {
     text-align: center;
     list-style-type: none;
     font-size: 3vw;
@@ -10,20 +10,20 @@ li {
     color: white;
 }
 
-a {
+.rozscestnikContainer a {
     color: white;
 }
 
-a:visited {
+.rozscestnikContainer a:visited {
     color: white;
 }
 
-a:hover, li:hover {
+.rozscestnikContainer a:hover, li:hover {
     color: white;
     background-color: #aa0000;
 }
 
-a:active, li:active {
+.rozscestnikContainer a:active, li:active {
     color: white;
     background-color: #CC0000;
 }
