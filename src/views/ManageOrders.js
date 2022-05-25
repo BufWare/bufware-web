@@ -13,7 +13,7 @@ export default function ManageOrders(){
 
     const getOrders = async () => {
         try{
-            const response = await fetch("https://62849a953060bbd3473b9bce.mockapi.io/orders");
+            const response = await fetch(`${process.env.REACT_APP_API_URL}/orders`);
             const orders = await response.json();
             setOrders(orders);
         } catch (err) {
@@ -30,12 +30,19 @@ export default function ManageOrders(){
         const order = newOrders.find(order => order.id === id);
         order.stav = state;
         setOrders(newOrders);
-        /*try{
-            await fetch("https://ptsv2.com/t/gnry0-1653476753/post", {method: 'POST', body: JSON.stringify({"id": id, "stav": state})});
+        try{
+            await fetch(`${process.env.REACT_APP_API_URL}/state`, {
+                    method: 'POST',
+                    headers: {
+                        "Content-type": "application/json"
+                    },
+                    body: JSON.stringify({"id": id, "stav": state})
+                }
+            );
             getOrders();
         } catch (err) {
             console.error(err.message);
-        }*/
+        }
     };
 
     return(

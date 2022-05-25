@@ -18,7 +18,7 @@ export default function Order({type, orders, changeState}){
                             return (
                                 <tr key={order.id}>
                                     <td className="orderId">#{order.id}</td>
-                                    <td className="orderTime">{order.cas}</td>
+                                    <td className="orderTime">{order.timestamp}</td>
                                     <td className="orderPrice">{order.cena} Kč</td>
                                     <td className="button" style={{ backgroundColor: (order.stav===0) ? 'red' : 'white'}} onClick={() => changeState(0, order.id)}>Objednaná</td>
                                     <td className="button" style={{ backgroundColor: (order.stav===1) ? 'red' : 'white'}} onClick={() => changeState(1, order.id)}>Připravená</td>

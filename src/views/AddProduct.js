@@ -12,7 +12,7 @@ export default function AddProduct() {
         const getData = async () => {
           try {
             const response = await fetch(
-              `${process.env.REACT_APP_API_URL}/products`
+              `${process.env.REACT_APP_API_URL}/menu`
             );
             if (!response.ok) {
               throw new Error(
