@@ -1,29 +1,32 @@
-li {  
+.rozscestnikContainer li {
+    block: inline-block;
     text-align: center;
-    list-style-type: none;
-    font-size: 3vw;
-    font-family:Arial, Helvetica, sans-serif;
-    margin: 2vw 20vw;
-    padding: 2vw;
-    border-radius: 10px;
+    text-transform: uppercase;
+    color: white;
     background-color: #CC0000;
+    font-family: Poppins;
+    list-style-type: none;
+    font-size: 42px;
+    background-color: #CC0000;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 20px;
+}
+
+.rozscestnikContainer a {
     color: white;
 }
 
-a {
+.rozscestnikContainer a:visited {
     color: white;
 }
 
-a:visited {
-    color: white;
-}
-
-a:hover, li:hover {
+.rozscestnikContainer a:hover, li:hover {
     color: white;
     background-color: #aa0000;
 }
 
-a:active, li:active {
+.rozscestnikContainer a:active, li:active {
     color: white;
     background-color: #CC0000;
 }

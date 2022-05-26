@@ -2,6 +2,8 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Poppins;
+    text-transform: uppercase;
 }
 
 body{
@@ -20,9 +22,20 @@ h1,h2,h3,h4,h5{
 
 p, div{
     font-family: Poppins;
-    color: white;
 }
 
 hr{
-    border: 0.3vw solid white;
+    border: 0.2vw solid black;
+}
+
+.container{
+    height: auto;
+    width: 1000px;
+    margin: 10px auto;
+    border: 5px solid black;
+    border-radius: 20px;
+    overflow: hidden;
+    color: black;
+    text-align: center;
+    user-select: none;
 }

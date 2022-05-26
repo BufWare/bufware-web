@@ -5,6 +5,8 @@ import '../css/CustomerOrderCheckout.css';
 
 export default function CustomerOrderCheckout() {
     const [orders, setOrders] = useState([]);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         getOrders();
@@ -19,21 +21,31 @@ export default function CustomerOrderCheckout() {
             setOrders(orders);
         } catch (err) {
             console.error(err.message);
+            setError(err.message);
+        }
+        finally {
+            setLoading(false);
         }
     };
 
+
     return(
-        <div className="orderList">
+        <div className="customerOrderCheckoutContainer container">
             <h1>Seznam objednávek</h1>
-            <hr/>
-            <h2>Objednané</h2>
-            <div className="chosenOrderList">
-                <ChosenOrders type={0} orders={orders}/>
-            </div>
-            <h2>Připravené</h2>
-            <div className="chosenOrderList">
-                <ChosenOrders type={1} orders={orders}/>
-            </div>
+            {loading && <div>Načítání...</div>}
+            {!loading && error && (<div>Nastal problém při načítání dat - {error}</div>)}
+            {!loading && !error &&
+            <>
+                <h2>Objednané</h2>
+                <div className="chosenOrderList">
+                    <ChosenOrders type={0} orders={orders}/>
+                </div>
+                <h2>Připravené</h2>
+                <div className="chosenOrderList">
+                    <ChosenOrders type={1} orders={orders}/>
+                </div>
+            </>
+            }
         </div>
     );
 }

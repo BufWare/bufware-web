@@ -1,0 +1,16 @@
+.cancelConfirmOrderContainer .newOrder{
+    height: 200px;
+    width: 200px;
+    background-color: #cc0000;
+    text-align: center;
+    line-height: 200px;
+    margin: 10px auto;
+    border-radius: 20px;
+    font-size: 48px;
+    color: white;
+    cursor: pointer;
+}
+
+.cancelConfirmOrderContainer .newOrder:hover{
+    background-color: #aa0000;
+}
