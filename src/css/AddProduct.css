@@ -118,14 +118,43 @@ button:active {
     width: auto;
 }
 
-.Reset{
-    width: 300px;
-    padding: 12px 20px;
-    margin: 8px 4px;
+.ResetButton{
+    width: auto;
+    padding: 10px 20px;
+    margin: 8px 8px;
     box-sizing: border-box;
     border: 1px solid black;
     border-radius: 4px;
     background-color: #CC0000;
-    color: white;
-    outline: none;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.ResetButton:active{
+    width: auto;
+    padding: 10px 20px;
+    margin: 8px 8px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #aa0000;
+    color: black;
+    text-align: center;
+    font-weight: bold;
+}
+
+.AddProductForm table{
+    border-collapse: collapse;
+    margin: 5px;
+    border: 5px solid black;
+}
+
+.AddProductForm h1{
+    margin: 5px;
+    border-radius: 5px;
+}
+
+.EditProduktu .Textak{
+    width: 300px;
 }

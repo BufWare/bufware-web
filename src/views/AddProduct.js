@@ -13,7 +13,7 @@ export default function AddProduct() {
   };
 
   const resetRadioState = () => {
-    setSelekce("");
+    window.location.reload();
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function AddProduct() {
   }, []);
 
   return (
-    <div>
+    <div className="AddProductForm">
       <h1>Seznam produktů</h1>
       {loading && <div>Načítání...</div>}
       {error && (
@@ -79,10 +79,12 @@ export default function AddProduct() {
       <div>
         <button
           title="Reset"
-          className="Reset"
+          className="ResetButton"
           type="reset"
           onClick={resetRadioState}
-        />
+        >
+          Reset
+        </button>
       </div>
       <h1>Přidání produktu</h1>
       <AddProductForm parentToChild={selekce} data={data} />
@@ -133,9 +135,8 @@ function AddProductForm({ parentToChild, data: produkty }) {
       setPopis(produkty.find((x) => x.id === parentToChild).popis);
     }
   }, [parentToChild]);
-
   let handleSubmit = async (e) => {
-    //e.preventDefault();
+    e.preventDefault();
     try {
       let res = await fetch("http://ptsv2.com/t/4u5q2-1653307421/post", {
         /*Zde změnit REST API*/
@@ -150,12 +151,7 @@ function AddProductForm({ parentToChild, data: produkty }) {
       });
       if (res.status === 200) {
         /*Pokud odpověď API je správná/funguje, tak se hodnoty v inputech vynulují a vypíše se zpráva*/
-        setNazev("");
-        setCena("");
-        setPopis("");
-        setSkryty();
-        setChecked((c) => false);
-        setMessage("Produkt přidán úspěšně.");
+        window.location.reload();
       } else {
         setMessage("Error někde.");
       }
@@ -166,8 +162,9 @@ function AddProductForm({ parentToChild, data: produkty }) {
 
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="EditProduktu">
         <input
+          className="Textak"
           type="text"
           placeholder="Název"
           value={nazev}
@@ -176,6 +173,7 @@ function AddProductForm({ parentToChild, data: produkty }) {
         />
         <br></br>
         <input
+          className="Textak"
           type="number"
           placeholder="Cena"
           value={cena}
@@ -184,6 +182,7 @@ function AddProductForm({ parentToChild, data: produkty }) {
         />
         <br></br>
         <input
+          className="Textak"
           type="text"
           placeholder="Popis"
           value={popis}
@@ -230,7 +229,9 @@ function AddProductForm({ parentToChild, data: produkty }) {
               </>
             ))}
         </div>
-        <button type="submit">Odeslat</button>
+        <button className="ResetButton" type="submit">
+          Odeslat
+        </button>
         <br></br>
 
         <div className="message">{message ? <h3>{message}</h3> : null}</div>
