@@ -10,10 +10,12 @@
     padding: 0;
 }
 
-
 .manageOrderContainer > table > tbody > tr > td, .manageOrderContainer > table > thead > tr > th{
     padding: 10px;
     border: 3px solid black;
+}
+.manageOrderContainer > table > thead > tr > th{
+    color: white;
 }
 
 .dropDown > td{
