@@ -4,7 +4,7 @@ export default function Product({products, addToCart}){
     return (
         <div>
             {
-                products.map(product => {
+                products.filter(order => order.skryty===false).map(product => {
                         return (
                             <>
                                 <div key={product.id} onClick={() => addToCart(product.id)} className="product">
