@@ -30,7 +30,7 @@ export default function CustomerOrderCheckout() {
 
 
     return(
-        <div className="customerOrderCheckoutContainer container">
+        <div className="customerOrderCheckoutContainer container containerBorder">
             <h1>Seznam objednávek</h1>
             {loading && <div>Načítání...</div>}
             {!loading && error && (<div>Nastal problém při načítání dat - {error}</div>)}

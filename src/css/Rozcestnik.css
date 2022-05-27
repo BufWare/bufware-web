@@ -15,6 +15,7 @@
 
 .rozscestnikContainer a {
     color: white;
+    text-decoration: none;
 }
 
 .rozscestnikContainer a:visited {
@@ -29,4 +30,10 @@
 .rozscestnikContainer a:active, li:active {
     color: white;
     background-color: #CC0000;
+}
+
+.rozcestnikLogo{
+    width: 900px;
+    margin: 40px auto;
+    display: block;
 }
