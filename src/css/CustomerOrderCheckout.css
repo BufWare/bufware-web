@@ -17,3 +17,9 @@
     color: white;
     margin: 10px;
 }
+
+.customerOrderCheckoutContainer .noOrders {
+    margin: 1% 0;
+    font-size: 25px;
+    font-weight: bold;
+}
