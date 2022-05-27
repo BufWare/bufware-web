@@ -13,7 +13,7 @@ export default function ManageOrders(){
 
     const getOrders = async () => {
         try{
-            const response = await fetch("https://62849a953060bbd3473b9bce.mockapi.io/orders");
+            const response = await fetch("https://62849a953060bbd3473b9bce.mockapi.io/order");
             const orders = await response.json();
             setOrders(orders);
         } catch (err) {
@@ -44,19 +44,26 @@ export default function ManageOrders(){
         */
     };
 
+    const orderDetail = (order) => {
+        order.detail=!order.detail
+        const newOrders = [...orders];
+        setOrders(newOrders);
+    };
+
     return(
-        <div className="manageOrderContainer container">
+        <div className="manageOrderContainer container containerBorder">
+
             <h1>Správa objednávek</h1>
             {loading && <div>Načítání...</div>}
             {error && (<div>Nastal problém při načítání dat - {error}</div>)}
             {!loading && !error &&
             <>
             <h2>Objednané</h2>
-            <Order orders={orders} changeState={changeState} type={[0]}/>
+            <Order orders={orders} changeState={changeState} orderDetail={orderDetail} type={[0]}/>
             <h2>Připravené</h2>
-            <Order orders={orders} changeState={changeState} type={[1]}/>
+            <Order orders={orders} changeState={changeState} orderDetail={orderDetail} type={[1]}/>
             <h2>Ukončené</h2>
-            <Order orders={orders} changeState={changeState} type={[2,3]}/>
+            <Order orders={orders} changeState={changeState} orderDetail={orderDetail} type={[2,3]}/>
             </>}
         </div>
     );

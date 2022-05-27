@@ -2,16 +2,38 @@
     margin: 1% 0;
 }
 
-.manageOrderContainer table{
+.manageOrderContainer > table{
     width: 98%;
     margin: 1% 1%;
     border: 5px solid black;
     border-collapse: collapse;
+    padding: 0;
 }
 
-.manageOrderContainer td{
+
+.manageOrderContainer > table > tbody > tr > td, .manageOrderContainer > table > thead > tr > th{
     padding: 10px;
-    border: 2px solid black;
+    border: 3px solid black;
+}
+
+.dropDown > td{
+    padding: 0 !important;
+}
+
+
+.dropDown > td > table > tbody > tr > td:nth-child(1){
+    width: 10%;
+}
+
+.dropDown td:nth-child(2){
+    width: 10%;
+}
+
+.dropDown table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: #cc000040;
+    outline: 3px solid black;
 }
 
 .manageOrderContainer tHead{
@@ -24,6 +46,16 @@
 }
 
 .manageOrderContainer .button:hover{
-    background-color: #aa0000;
+    background-color: #cc000040;
+}
+
+.manageOrderContainer .arrow img {
+    display: block;
+    margin: 2px auto;
+    height: 30px;
+}
+
+.manageOrderContainer .arrow{
+   padding: 0;
 }
 

@@ -98,7 +98,7 @@ export default function CreateOrder(){
     };
 
     return(
-            <div className="createOrderContainer container">
+            <div className="createOrderContainer container containerBorder">
                 <h1>Produkty</h1>
                 {loading && <div>Načítání...</div>}
                 {error && (<div>Nastal problém při načítání dat - {error}</div>)}
