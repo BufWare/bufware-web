@@ -6,6 +6,15 @@ export default function AddProduct() {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [selekce, setSelekce] = useState("");
+
+  const handleChange = (event) => {
+    setSelekce(event.target.value);
+  };
+
+  const resetRadioState = () => {
+    setSelekce("");
+  };
 
   useEffect(() => {
     const getData = async () => {
@@ -30,6 +39,7 @@ export default function AddProduct() {
     };
     getData();
   }, []);
+
   return (
     <div>
       <h1>Seznam produktů</h1>
@@ -51,7 +61,14 @@ export default function AddProduct() {
           data.map(({ id, nazev, cena, popis }) => (
             <tr key={id}>
               <td>
-                <input type="radio" name={id} key={id} />
+                <input
+                  type="radio"
+                  name="selectProduct"
+                  key={id}
+                  value={id}
+                  checked={selekce === id}
+                  onChange={handleChange}
+                />
               </td>
               <td>{nazev}</td>
               <td>{cena} Kč</td>
@@ -59,14 +76,22 @@ export default function AddProduct() {
             </tr>
           ))}
       </table>
+      <div>
+        <button
+          title="Reset"
+          className="Reset"
+          type="reset"
+          onClick={resetRadioState}
+        />
+      </div>
       <h1>Přidání produktu</h1>
-      <AddProductForm />
+      <AddProductForm parentToChild={selekce} data={data} />
     </div>
   );
 }
 
-function AddProductForm() {
-  const [data, setData] = useState(null);
+function AddProductForm({ parentToChild, data: produkty }) {
+  const [kategorie, setKategorie] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
   const [checked, setChecked] = useState(null);
@@ -76,7 +101,6 @@ function AddProductForm() {
   const [skryty, setSkryty] = useState(false);
   const [message, setMessage] = useState("");
   const [kategorieArr, updateKategorieArr] = useState([]);
-  //const [checkedState, setCheckedState] = useState(new Array(data).fill(false));
 
   useEffect(() => {
     const getData = async () => {
@@ -90,17 +114,25 @@ function AddProductForm() {
           );
         }
         let actualData = await response.json();
-        setData(actualData);
+        setKategorie(actualData);
         setError(null);
       } catch (err) {
         setError(err.message);
-        setData(null);
+        setKategorie(null);
       } finally {
         setLoading(false);
       }
     };
     getData();
   }, []);
+
+  useEffect(() => {
+    if (parentToChild !== "") {
+      setNazev(produkty.find((x) => x.id === parentToChild).nazev);
+      setCena(produkty.find((x) => x.id === parentToChild).cena);
+      setPopis(produkty.find((x) => x.id === parentToChild).popis);
+    }
+  }, [parentToChild]);
 
   let handleSubmit = async (e) => {
     //e.preventDefault();
@@ -133,75 +165,76 @@ function AddProductForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        placeholder="Název"
-        value={nazev}
-        onChange={(e) => setNazev(e.target.value)}
-        required
-      />
-      <br></br>
-      <input
-        type="number"
-        placeholder="Cena"
-        value={cena}
-        onChange={(e) => setCena(e.target.value)}
-        required
-      />
-      <br></br>
-      <input
-        type="text"
-        placeholder="Popis"
-        value={popis}
-        onChange={(e) => setPopis(e.target.value)}
-      />
-      <br></br>
-      <label className="KategorieNazev">
-        Skrytý
+    <>
+      <form onSubmit={handleSubmit}>
         <input
-          className="CheckboxKategorie"
-          type="checkbox"
-          value={skryty}
-          onChange={(e) => setSkryty(!skryty)}
+          type="text"
+          placeholder="Název"
+          value={nazev}
+          onChange={(e) => setNazev(e.target.value)}
+          required
         />
-      </label>
-      <br></br>
-
-      {loading && <div>Načítání...</div>}
-      {error && (
-        <div>
-          {"There is a problem fetching the post data - "}
-          {error}
-        </div>
-      )}
-      <div className="KategorieNazev">
-        <b>Kategorie</b>
         <br></br>
-        {data &&
-          data.map(({ id, nazevKategorie }) => (
-            <>
-              <input
-                className="CheckboxKategorie"
-                type="checkbox"
-                value={id}
-                onChange={(e) =>
-                  updateKategorieArr((kategorieArr) => [
-                    ...kategorieArr,
-                    e.target.value,
-                  ]) && setChecked(e.target.checked)
-                }
-                checked={checked}
-              />
-              <label for={id}>{nazevKategorie}</label>
-              <br></br>
-            </>
-          ))}
-      </div>
-      <button type="submit">Odeslat</button>
-      <br></br>
+        <input
+          type="number"
+          placeholder="Cena"
+          value={cena}
+          onChange={(e) => setCena(e.target.value)}
+          required
+        />
+        <br></br>
+        <input
+          type="text"
+          placeholder="Popis"
+          value={popis}
+          onChange={(e) => setPopis(e.target.value)}
+        />
+        <br></br>
+        <label className="KategorieNazev">
+          Skrytý
+          <input
+            type="checkbox"
+            value={skryty}
+            onChange={(e) => setSkryty(!skryty)}
+          />
+        </label>
+        <br></br>
 
-      <div className="message">{message ? <h3>{message}</h3> : null}</div>
-    </form>
+        {loading && <div>Načítání...</div>}
+        {error && (
+          <div>
+            {"There is a problem fetching the post data - "}
+            {error}
+          </div>
+        )}
+        <div className="KategorieNazev">
+          <b>Kategorie</b>
+          <br></br>
+          {kategorie &&
+            kategorie.map(({ id, nazevKategorie }) => (
+              <>
+                <input
+                  className="CheckboxKategorie"
+                  type="checkbox"
+                  value={id}
+                  onChange={(e) =>
+                    updateKategorieArr((kategorieArr) => [
+                      ...kategorieArr,
+                      e.target.value,
+                    ]) && setChecked(e.target.checked)
+                  }
+                  checked={checked}
+                />
+                <label for={id}>{nazevKategorie}</label>
+                <br></br>
+              </>
+            ))}
+        </div>
+        <button type="submit">Odeslat</button>
+        <br></br>
+
+        <div className="message">{message ? <h3>{message}</h3> : null}</div>
+      </form>
+    </>
   );
 }

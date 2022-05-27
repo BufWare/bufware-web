@@ -117,3 +117,15 @@ button:active {
 .CheckboxKategorie:focus{
     width: auto;
 }
+
+.Reset{
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 4px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #CC0000;
+    color: white;
+    outline: none;
+}
