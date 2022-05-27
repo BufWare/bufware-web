@@ -1,4 +1,5 @@
 .addProductContainer h1{
+    font-family: Popppins;
     font-size: 24px;
     margin: 5px;
     padding: 5px;
@@ -44,6 +45,18 @@
     outline: none;
 }
 
+button:active {
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 4px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #CC0000;
+    color: white;
+    outline: none;
+}
+
 .addProductContainer input:focus {
     width: 300px;
     padding: 12px 20px;
@@ -72,6 +85,7 @@
     border: 1px solid black;
     border-collapse: collapse;
     padding: 3px;
+    color: black;
 }
 
 .addProductContainer table td input{
@@ -79,4 +93,39 @@
 }
 .addProductContainer table td input:focus{
     width: auto;
+}
+
+.message {
+    font-size: 1.2em;
+    text-align: center;
+    color: #36a936;
+    width: 50%;
+}
+
+.KategorieNazev{
+    color: black;
+}
+
+.CheckboxKategorie{
+    width: auto;
+}
+
+.CheckboxKategorie:active{
+    width: auto;
+}
+
+.CheckboxKategorie:focus{
+    width: auto;
+}
+
+.Reset{
+    width: 300px;
+    padding: 12px 20px;
+    margin: 8px 4px;
+    box-sizing: border-box;
+    border: 1px solid black;
+    border-radius: 4px;
+    background-color: #CC0000;
+    color: white;
+    outline: none;
 }
